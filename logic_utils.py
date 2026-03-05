@@ -1,26 +1,32 @@
-def get_range_for_difficulty(difficulty: str):
-    """Return (low, high) inclusive range for a given difficulty."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+import random
 
 
-def parse_guess(raw: str):
-    """
-    Parse user input into an int guess.
-
-    Returns: (ok: bool, guess_int: int | None, error_message: str | None)
-    """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+def generate_secret_number(low=1, high=100):
+    return random.randint(low, high)
 
 
-def check_guess(guess, secret):
-    """
-    Compare guess to secret and return (outcome, message).
-
-    outcome examples: "Win", "Too High", "Too Low"
-    """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+def parse_guess(user_input):
+    try:
+        return int(user_input)
+    except ValueError:
+        return None
 
 
-def update_score(current_score: int, outcome: str, attempt_number: int):
-    """Update score based on outcome and attempt number."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+def check_guess(secret, guess):
+    # FIXME: guess comparison bug
+    if guess == secret:
+        return "correct"
+    elif guess < secret:
+        return "higher"
+    else:
+        return "lower"
+
+
+def generate_hint(secret, guess):
+    # FIXME: bug in hint logic
+    if guess < secret:
+        return "Try a higher number."
+    elif guess > secret:
+        return "Try a lower number."
+    else:
+        return "You got it!"
