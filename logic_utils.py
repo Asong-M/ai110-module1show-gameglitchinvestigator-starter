@@ -12,14 +12,14 @@ def parse_guess(user_input):
         return None
 
 
-def check_guess(secret, guess):
-    # FIXME: guess comparison bug
+def check_guess(guess, secret):
+    # FIXME: guess comparison bug (argument order + outputs)
     if guess == secret:
-        return "correct"
-    elif guess < secret:
-        return "higher"
+        return "Win"
+    elif guess > secret:
+        return "Too High"
     else:
-        return "lower"
+        return "Too Low"
 
 
 def generate_hint(secret, guess):
