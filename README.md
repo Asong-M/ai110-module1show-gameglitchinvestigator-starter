@@ -28,9 +28,34 @@ It wrote the code, ran away, and now the game is unplayable.
 - [ ] Describe the game's purpose.
 - [ ] Detail which bugs you found.
 - [ ] Explain what fixes you applied.
+## Document Your Experience
+
+During this project, I used AI tools to help investigate and fix bugs in the game logic.
+
+Initially, the game had several issues:
+- The hint messages were inconsistent with the actual secret number.
+- The comparison logic in `check_guess()` was incorrect.
+- The function argument order caused incorrect results in the tests.
+
+Using AI assistance, I identified the issues and corrected the logic in `logic_utils.py`.
+
+I verified the fixes by running automated tests with `pytest`, which confirmed that the game logic now works correctly.
+
+This project helped me understand how to debug code systematically, verify behavior with tests, and collaborate effectively with AI tools during development.
 
 ## 📸 Demo
+## Demo
 
+This project is a simple number guessing game built with Streamlit.
+
+The user tries to guess a secret number between 1 and 100.  
+After each guess, the game provides feedback:
+
+- "Too High" if the guess is higher than the secret number
+- "Too Low" if the guess is lower than the secret number
+- "Win" if the guess matches the secret number
+
+The game logic was debugged and improved using AI tools and automated tests with pytest.
 - [ ] [Insert a screenshot of your fixed, winning game here]
 
 ## 🚀 Stretch Features
